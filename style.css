@@ -42,7 +42,7 @@ button { font: inherit; }
 .hero-scroll { position: absolute; bottom: 30px; left: max(28px, calc((100% - 1050px) / 2)); display: inline-flex; align-items: center; gap: 9px; color: #8e929b; font-size: 9px; letter-spacing: 1.2px; }
 .hero-scroll span { width: 22px; height: 1px; background: #a9bdff; }
 
-.section { min-height: 100vh; min-height: 100svh; display: flex; align-items: center; padding: 78px 0; }
+.section {background: var(--paper); min-height: 100vh; min-height: 100svh; display: flex; align-items: center; padding: 78px 0; }
 .about-grid { display: grid; grid-template-columns: 1fr 210px; align-items: center; gap: 78px; }
 .section h2 { margin: 0; font: 750 clamp(27px, 3.2vw, 36px)/1.2 var(--font-display); letter-spacing: -1.2px; }
 .section-copy > p:not(.eyebrow) { max-width: 720px; margin: 17px 0 0; color: #686d77; font-size: 13px; line-height: 1.85; }
