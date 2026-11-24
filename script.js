@@ -8,6 +8,7 @@ if (menuToggle && navLinks) {
         menuToggle.setAttribute("aria-expanded", String(!isExpanded));
         menuToggle.setAttribute("aria-label", isExpanded ? "Buka menu" : "Tutup menu");
         navLinks.classList.toggle("is-open", !isExpanded);
+        document.body.classList.toggle("menu-open", !isExpanded);
     });
 
     navLinks.addEventListener("click", (event) => {
@@ -15,6 +16,26 @@ if (menuToggle && navLinks) {
             navLinks.classList.remove("is-open");
             menuToggle.setAttribute("aria-expanded", "false");
             menuToggle.setAttribute("aria-label", "Buka menu");
+            document.body.classList.remove("menu-open");
+        }
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && navLinks.classList.contains("is-open")) {
+            navLinks.classList.remove("is-open");
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute("aria-label", "Buka menu");
+            document.body.classList.remove("menu-open");
+            menuToggle.focus();
+        }
+    });
+
+    window.addEventListener("resize", () => {
+        if (window.innerWidth > 700) {
+            navLinks.classList.remove("is-open");
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute("aria-label", "Buka menu");
+            document.body.classList.remove("menu-open");
         }
     });
 }
